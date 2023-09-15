@@ -25,7 +25,7 @@ setup(
         'dev': [
             'pytest==7.4.2',
             'packaging==23.1',
-            'coverage==7.3.1',
+            'coverage>=7.2.7',
             'flake8',
             'restructuredtext-lint',
         ],

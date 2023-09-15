@@ -1,0 +1,49 @@
+name: Test python package
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.tox_env }}
+    runs-on: ubuntu-latest
+
+    services:
+      redis:
+        image: redis:latest
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd="redis-cli ping" 
+          --health-interval=10s 
+          --health-timeout=5s 
+          --health-retries=5
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - python: '3.7'
+            tox_env: 'py37'
+          - python: '3.8'
+            tox_env: 'py38'
+          - python: '3.9'
+            tox_env: 'py39'
+          - python: '3.10'
+            tox_env: 'py310'
+          - python: '3.11'
+            tox_env: 'py311'
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install tox
+      - run: tox -e ${{ matrix.tox_env }}
