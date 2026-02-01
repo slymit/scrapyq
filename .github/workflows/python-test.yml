@@ -29,12 +29,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - python: '3.7'
-            tox_env: 'py37'
-          - python: '3.8'
-            tox_env: 'py38'
-          - python: '3.9'
-            tox_env: 'py39'
           - python: '3.10'
             tox_env: 'py310'
           - python: '3.11'
