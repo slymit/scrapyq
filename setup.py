@@ -42,6 +42,8 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'Environment :: No Input/Output (Daemon)',
