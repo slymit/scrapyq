@@ -20,7 +20,7 @@ setup(
     maintainer_email='slymit@gmail.com',
     url='https://github.com/slymit/scrapyq',
     packages=find_packages(exclude=['tests', 'tests.*']),
-    install_requires=['scrapyd==1.4.2', 'redis==5.0.0'],
+    install_requires=['scrapyd==1.4.2', 'redis==7.1.0'],
     extras_require={
         'dev': [
             'pytest==7.4.2',
