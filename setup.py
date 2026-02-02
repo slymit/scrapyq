@@ -23,7 +23,7 @@ setup(
     install_requires=['scrapyd==1.4.2', 'redis==7.1.0'],
     extras_require={
         'dev': [
-            'pytest==7.4.2',
+            'pytest==9.0.2',
             'packaging==23.1',
             'coverage>=7.2.7',
             'flake8',
