@@ -25,7 +25,7 @@ setup(
         'dev': [
             'pytest==9.0.2',
             'packaging==26.0',
-            'coverage>=7.2.7',
+            'pytest-cov',
             'flake8',
             'mdformat',
         ],

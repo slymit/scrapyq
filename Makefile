@@ -13,8 +13,7 @@ test: flake8
 	pytest tests $(ARGS)
 
 coverage: flake8 md-lint
-	coverage run --source scrapyq -m pytest tests $(ARGS)
-	coverage report --show-missing --fail-under 100
+	pytest --cov=scrapyq --cov-report=term-missing --cov-fail-under=100 tests $(ARGS)
 
 
 # Docker test containers
