@@ -27,7 +27,7 @@ setup(
             'packaging==26.0',
             'coverage>=7.2.7',
             'flake8',
-            'restructuredtext-lint',
+            'mdformat',
         ],
     },
     zip_safe=True,

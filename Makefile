@@ -3,8 +3,8 @@
 REDIS_VERSION?=7.2
 
 
-rst-lint:
-	rst-lint README.rst
+md-lint:
+	mdformat --check README.md
 
 flake8:
 	flake8 scrapyq tests setup.py
@@ -12,7 +12,7 @@ flake8:
 test: flake8
 	pytest tests $(ARGS)
 
-coverage: flake8 rst-lint
+coverage: flake8 md-lint
 	coverage run --source scrapyq -m pytest tests $(ARGS)
 	coverage report --show-missing --fail-under 100
 
