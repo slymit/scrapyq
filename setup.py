@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-with open(os.path.join(here, 'README.rst'), 'r', 'utf-8') as handle:
+with open(os.path.join(here, 'README.md'), 'r', 'utf-8') as handle:
     readme = handle.read()
 
 setup(
@@ -13,7 +13,7 @@ setup(
     version='1.0.0',
     description='A library to filter SQLAlchemy queries.',
     long_description=readme,
-    long_description_content_type='text/x-rst',
+    long_description_content_type='text/markdown',
     author='slymit',
     author_email='slymit@gmail.com',
     maintainer='slymit',
