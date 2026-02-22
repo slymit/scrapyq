@@ -11,7 +11,7 @@ with open(os.path.join(here, 'README.md'), 'r', 'utf-8') as handle:
 setup(
     name='scrapyq',
     version='1.0.0',
-    description='A library to filter SQLAlchemy queries.',
+    description='Scrapyd queue management using Redis.',
     long_description=readme,
     long_description_content_type='text/markdown',
     author='slymit',
