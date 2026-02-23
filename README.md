@@ -1,5 +1,10 @@
 # scrapyq
 
+[![version](https://img.shields.io/pypi/v/scrapyq.svg)](https://pypi.python.org/pypi/scrapyq)
+[![pyversions](https://img.shields.io/pypi/pyversions/scrapyq.svg)](https://pypi.python.org/pypi/scrapyq)
+[![actions](https://github.com/slymit/scrapyq/actions/workflows/python-test.yml/badge.svg)](https://github.com/slymit/scrapyq/actions/workflows/python-test.yml)
+[![codecov](https://codecov.io/github/slymit/scrapyq/graph/badge.svg?token=EYCSS4IG5F)](https://codecov.io/github/slymit/scrapyq)
+
 Scrapyq is designed to replace the SQLite backend by a Redis backend.
 In other words, all the queue management will be done using Redis.
 
