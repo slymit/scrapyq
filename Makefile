@@ -7,7 +7,7 @@ md-lint:
 	mdformat --check README.md
 
 flake8:
-	flake8 scrapyq tests setup.py
+	flake8 scrapyq tests
 
 test: flake8
 	pytest tests $(ARGS)
