@@ -50,3 +50,15 @@ zip-safe = true
 
 [tool.setuptools.packages.find]
 exclude = ["tests*", "tests.*"]
+
+[tool.tox]
+requires = ["tox>=4.8.0"]
+env_list = ["py310", "py311", "py312", "py313"]
+
+[tool.tox.env_run_base]
+allowlist_externals = ["make"]
+usedevelop = true
+extras = ["dev"]
+commands = [
+    ["make", "coverage", "ARGS=--cov-report=xml --junitxml=junit.xml -o junit_family=legacy -x -vv"]
+]
