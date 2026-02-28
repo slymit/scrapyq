@@ -1,20 +1,20 @@
 import json
+
 import redis
 
 
 class RedisPriorityQueue(object):
-
-    SECTION = 'scrapyq'
+    SECTION = "scrapyq"
 
     def __init__(self, config, collection):
         settings = dict(config.items(self.SECTION, ()))
 
-        queue_prefix = settings.get('queue_prefix', 'scrapyq.queue.')
-        redis_db = settings.get('redis_db', 0)
-        redis_host = settings.get('redis_host', 'localhost')
-        redis_port = settings.get('redis_port', 6379)
-        redis_username = self.get_optional_config(settings, 'redis_username')
-        redis_password = self.get_optional_config(settings, 'redis_password')
+        queue_prefix = settings.get("queue_prefix", "scrapyq.queue.")
+        redis_db = settings.get("redis_db", 0)
+        redis_host = settings.get("redis_host", "localhost")
+        redis_port = settings.get("redis_port", 6379)
+        redis_username = self.get_optional_config(settings, "redis_username")
+        redis_password = self.get_optional_config(settings, "redis_password")
 
         self.conn = redis.Redis(
             host=redis_host,
@@ -23,7 +23,7 @@ class RedisPriorityQueue(object):
             decode_responses=True,
             db=int(redis_db),
             username=redis_username,
-            password=redis_password
+            password=redis_password,
         )
 
         self.queue = f"{queue_prefix}{collection}"
@@ -33,7 +33,7 @@ class RedisPriorityQueue(object):
         value = settings.get(name, None)
         if value is None:
             return None
-        return value.strip('\'').strip('"')
+        return value.strip("'").strip('"')
 
     @staticmethod
     def encode(obj):
@@ -72,6 +72,7 @@ class RedisPriorityQueue(object):
     def __iter__(self):
         return (
             (self.decode(obj[0]), obj[1])
-            for obj in
-            self.conn.zrange(name=self.queue, start=0, end=-1, withscores=True)
+            for obj in self.conn.zrange(
+                name=self.queue, start=0, end=-1, withscores=True
+            )
         )
