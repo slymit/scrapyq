@@ -70,3 +70,7 @@ select = ["E", "F", "I", "W", "B"]
 combine-as-imports = true
 force-single-line = false
 lines-after-imports = 2
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
