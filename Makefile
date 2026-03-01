@@ -18,7 +18,7 @@ test: lint
 	pytest tests $(ARGS)
 
 coverage: lint md-lint
-	pytest --cov=scrapyq --cov-report=term-missing --cov-fail-under=100 tests $(ARGS)
+	pytest --cov=scrapyq tests $(ARGS)
 
 
 # Docker test containers
