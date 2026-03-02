@@ -14,6 +14,7 @@ maintainers = [
     {name = "slymit", email = "slymit@gmail.com"}
 ]
 license = {text = "BSD"}
+keywords = ["scrapy", "scrapyd", "redis", "queue", "spiderqueue"]
 classifiers = [
     "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
