@@ -45,6 +45,7 @@ dev = [
 
 [project.urls]
 Homepage = "https://github.com/slymit/scrapyq"
+Repository = "https://github.com/slymit/scrapyq.git"
 
 [tool.setuptools]
 zip-safe = true
