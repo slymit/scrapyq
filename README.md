@@ -39,3 +39,51 @@ redis_port = 6379
 redis_username = 'admin'  # (Optional)
 redis_password = 'password'  # (Optional)
 ```
+
+## Development and Testing
+
+### Installation
+
+Install the package with development dependencies using the `dev` extra:
+
+```shell
+pip install -e ".[dev]"
+```
+
+### Running tests
+
+Testing requires a Redis instance. You can quickly start a Docker container using the provided Makefile command:
+
+```shell
+make redis-container
+```
+
+The standard test command runs both Ruff linting and the full pytest suite:
+
+```shell
+make test
+```
+
+Run code linting with Ruff:
+
+```shell
+make lint
+```
+
+Run documentation linting with mdformat:
+
+```shell
+make md-lint
+```
+
+Automatically format code and imports with Ruff:
+
+```shell
+make format
+```
+
+The coverage command runs linting, documentation linting, and generates a coverage report:
+
+```shell
+make coverage
+```
