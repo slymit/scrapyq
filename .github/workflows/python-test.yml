@@ -48,13 +48,13 @@ jobs:
 
       - name: Upload Coverage to Codecov
         if: matrix.python == '3.13' && !cancelled()
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Upload Test Results to Codecov
         if: matrix.python == '3.13' && !cancelled()
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./junit.xml
